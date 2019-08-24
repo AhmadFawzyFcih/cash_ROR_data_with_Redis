@@ -4,7 +4,12 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = RedisModule::Getters.new.get_key_value("users")
+    if(@users.nil?)
+      @users = User.all.to_json
+      RedisModule::Setters.new.set_key_value("users", @users)
+    end
+    @users = JSON.load(@users)
   end
 
   # GET /users/1
