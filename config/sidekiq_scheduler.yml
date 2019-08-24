@@ -1,0 +1,6 @@
+job_two_job:
+  every: '2m'   # every 2 mins
+  class: JobTwoJob
+  queue: urgent
+  # args: contributors
+  # description: 'This job resets the weekly leaderboard for contributions'

@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Versions</h1>
+
+<table border="2px">
+  <thead>
+    <tr>
+      <th>Item type</th>
+      <th>whodunnit_type</th>
+      <%
+=begin%>
+ <th>object</th> 
+<%
+=end%>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @versions.each do |version| %>
+      <tr>
+        <td><%= version.item_type %></td>
+        <td><%= version.whodunnit_type %></td>
+        <%
+=begin%>
+ <td><%= version.object %></td> 
+<%
+=end%>
+        <td><%= link_to 'Show', version %></td>
+        <td><%= link_to 'Edit', edit_version_path(version) %></td>
+        <td><%= link_to 'Destroy', version, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Fire Job 1', fire_job_one_version_path(version) %></td>
+        <td><%= link_to 'Fire Job 2', versions_fire_job_2_versions_path(version) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Version', new_version_path %>

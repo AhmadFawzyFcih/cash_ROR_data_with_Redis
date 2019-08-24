@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item type:</strong>
+  <%= @version.item_type %>
+</p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @version.item_id %>
+</p>
+
+<p>
+  <strong>Integer:</strong>
+  <%= @version.integer %>
+</p>
+
+<%= link_to 'Edit', edit_version_path(@version) %> |
+<%= link_to 'Back', versions_path %>
