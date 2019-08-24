@@ -26,12 +26,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'image_processing', '~> 1.2'
 gem 'pry', '~> 0.12.2'
 gem 'active_model_serializers', '~> 0.10.0'
-gem 'time_difference'
-gem 'rest-client'
 
-gem 'sidekiq', '~> 5.0', '>= 5.0.5'
-gem 'sidekiq-scheduler', '~> 2.0', '>= 2.0.8'
-gem "sidekiq-cron", "~> 1.1"
+#documentation link => https://www.sitepoint.com/introduction-to-using-redis-with-rails/
+gem 'redis'
+gem 'redis-namespace'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

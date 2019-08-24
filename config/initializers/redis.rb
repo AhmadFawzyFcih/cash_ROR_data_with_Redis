@@ -1,0 +1,1 @@
+$redis = Redis::Namespace.new("cashing_in_rails", :redis => Redis.new)

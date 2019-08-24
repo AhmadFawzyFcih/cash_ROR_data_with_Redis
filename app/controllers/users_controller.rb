@@ -4,10 +4,10 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = RedisModule::Getters.new.get_key_value("users")
+    @users = $redis.get("users")
     if(@users.nil?)
       @users = User.all.to_json
-      RedisModule::Setters.new.set_key_value("users", @users)
+      $redis.set("users", @users)
     end
     @users = JSON.load(@users)
   end
