@@ -1,1 +1,1 @@
-# Jobs and worker with sidekiq backend queuing system
+# cash data using redis
